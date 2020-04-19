@@ -1,0 +1,73 @@
+
+*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package pila.prac.pkg1;
+
+import java.util.Scanner;
+
+public class PilaPrac1 {
+
+    
+     
+    public static void main(String[] args) {
+        Scanner leer=new Scanner(System.in);
+        int n=0,opcion;
+        int tope=0;
+        
+         char[] letra=new char[25];
+        
+         System.out.println("tamaño de la pila?");
+            n=leer.nextInt();
+            
+            do{
+
+            System.out.println("1-agregar letra");
+            System.out.println("2-mostrar pila: ");
+            System.out.println("3-eliminar pila ");
+               System.out.println("4-salir");
+            opcion = leer.nextInt();
+            
+            switch(opcion){
+                 case 1:
+            if (tope<n) {
+                        System.out.println("agruegue elento");
+                        letra[tope] = leer.next().charAt(0);
+
+                        tope++;
+                    } else {
+                        System.out.println("pila llena");
+
+                    }break;
+                 case 2:
+                   System.out.println("los datos pueden ser: ");
+                  
+                    if (tope > 0) {
+                                                
+                        for (int i = 0; i < n; i++) {
+                           
+                            System.out.println(letra[i]+" ");
+                        }
+                    } else {
+                        System.out.println("la pila esta vacia ");
+                    }
+                    break;
+            
+                     case 3:
+                        if (tope> 0) {
+                                          
+                        for (int i = 0; i < n-1; i++) {
+                           
+                            System.out.println(letra[i]+" ");
+                        }
+                    } else {
+                        System.out.println("Ya no hay elementos para eliminar");
+                    }
+                    break; 
+            }
+            } while (opcion!= 4);
+    }
+            
+}
